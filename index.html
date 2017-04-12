@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script>
+    System.config({
+        // we want to import modules without writing .js at the end
+        defaultExtension: 'js',
+        // the app will need the following dependencies
+        map: {
+            '@angular': 'node_modules/@angular',
+            'rxjs': 'node_modules/rxjs'
+        },
+        // angular needs a bit of configuration to point to the main files
+        packages: {
+        	app: {
+	            main: 'bootstrap.js',
+	            defaultExtension: 'js'
+	        },
+            '@angular/core': {
+                main: 'bundles/core.umd.js',
+                defaultExtension: 'js'
+            },
+            '@angular/compiler': {
+                main: 'bundles/compiler.umd.js',
+                defaultExtension: 'js'
+            },
+            '@angular/common': {
+                main: 'bundles/common.umd.js',
+                defaultExtension: 'js'
+            },
+            '@angular/platform-browser': {
+                main: 'bundles/platform-browser.umd.js'
+            },
+            '@angular/platform-browser-dynamic': {
+                main: 'bundles/platform-browser-dynamic.umd.js'
+            },
+            'rxjs': {
+		        defaultExtension: 'js'
+		    },
+        }
+    });
+    // and to finish, let's boot the app!
+    System.import('bootstrap.js').catch(function(err){ console.error(err); })
+    ;
+    </script>
+</head>
+
+<body>
+    <first-app>
+        You will see me while Angular starts the app!
+    </first-app>
+</body>
+
+</html>

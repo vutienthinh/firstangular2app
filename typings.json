@@ -1,0 +1,7 @@
+{
+  "name": "firstapp",
+  "dependencies": {},
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.9.0+20170324193834"
+  }
+}
