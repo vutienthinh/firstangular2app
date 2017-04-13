@@ -3,16 +3,29 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'first-app',
     template: `<h1>{{user?.firstname}} {{user.lastname}}</h1>
+    			<h4 textContent="{{user.firstname}}"></h4>
     			<h4 [textContent]="user.firstname"></h4>
     			<h4 bind-textContent="user.firstname"></h4>
-    			<h4 [innerHtml]="user.firstname"></h4>
-    			<h4 bind-innerHtml="user.firstname"></h4>`
+    			<h4 innerHtml="FirstName: {{getInfo().firstname}}"></h4>
+    			<h4 [innerHtml]="'FirstName: ' + getInfo().fname"></h4>
+    			<h4 bind-innerHtml="user.firstname"></h4>
+    			<img [src]="user.url">`
     			/*<h4 bind-name="user.firstname"></h4> go wrong bc h4 tag doesn't have name attribute as well as property
-    			<h4 [name]="user.firstname"></h4>`*/
+    			<h4 [name]="user.firstname"></h4>`
+    			<img src={{user.avatar.url}}> go wrong bc browser will try to fetch the image and read "src" ASAP,
+    			 the var can come from HTML over time */
 })
 
 export class FirstAppComponent {
 
-	private user: any = {firstname: 'thinh', lastname: 'vu'};
-    
+	private user: any = {firstname: 'thinh', lastname: 'vu', url: 'https://angular.io/resources/images/logos/standard/logo-nav.png'};
+
+    private getInfo() {
+    	/*let firstname = 'ha';//this.user.firstname;
+    	let lastname = this.user.lastname;*/
+    	let { firstname, lastname } = this.user;
+    	//let {firstname: fname, lastname: lname} = this.user;
+    	return { firstname, lastname };
+    }
+
 }
