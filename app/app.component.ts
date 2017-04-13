@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
+import { CountriesComponent } from '../pages/countries/countries.component';
 
 @Component({
     selector: 'first-app',
-    template: `<h1>{{user?.firstname}} {{user.lastname}}</h1>
+    template: `	<countries-app></countries-app>
+    			<h1>{{user?.firstname}} {{user.lastname}}</h1>
     			<h4 textContent="{{user.firstname}}"></h4>
     			<h4 [textContent]="user.firstname"></h4>
     			<h4 bind-textContent="user.firstname"></h4>
     			<h4 innerHtml="FirstName: {{getInfo().firstname}}"></h4>
-    			<h4 [innerHtml]="'FirstName: ' + getInfo().fname"></h4>
+    			<h4 [innerHtml]="'FirstName: ' + getInfo().firstname"></h4>
+    			<h4 [innerHtml]="'Age: ' + getInfo().age"></h4>
     			<h4 bind-innerHtml="user.firstname"></h4>
-    			<img [src]="user.url">`
+    			<img [src]="user.url">`,
     			/*<h4 bind-name="user.firstname"></h4> go wrong bc h4 tag doesn't have name attribute as well as property
     			<h4 [name]="user.firstname"></h4>`
     			<img src={{user.avatar.url}}> go wrong bc browser will try to fetch the image and read "src" ASAP,
     			 the var can come from HTML over time */
+    directives: [CountriesComponent]
 })
 
 export class FirstAppComponent {
@@ -23,9 +27,10 @@ export class FirstAppComponent {
     private getInfo() {
     	/*let firstname = 'ha';//this.user.firstname;
     	let lastname = this.user.lastname;*/
-    	let { firstname, lastname } = this.user;
-    	//let {firstname: fname, lastname: lname} = this.user;
-    	return { firstname, lastname };
+    	let { firstname = 'defaultFirstName', lastname = 'defaultLastName', age = '22'} = this.user;
+    	/*let {firstname: fname, lastname: lname} = this.user;
+    	return { fname, lname }; */
+    	return { firstname, lastname, age };
     }
 
 }
