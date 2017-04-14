@@ -3,10 +3,13 @@ import { CountryComponent } from '../country/country.component';
 
 @Component({
 	selector: 'countries-app',
-	template: `<div *ngFor="let count of _countries">
+	moduleId: module.id,
+	//templateUrl: 'pages/countries/countries.component.html', --> absolute reference
+	/*template: `<div *ngFor="let count of _countries">
 				<country-app [curCountry]="count"></country-app>
-			</div>`,
-	//templateUrl: 'countries-component.html',
+			</div>`,*/
+	templateUrl: 'countries.component.html',
+	styleUrls: ['countries.component.css'],
 	directives: [CountryComponent]
 })
 
