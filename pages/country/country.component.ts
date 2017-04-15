@@ -15,7 +15,8 @@ export class CountryComponent {
 
 	@Output() countryUpdated = new EventEmitter();
 
-	onChangeCountry(){
-		this.countryUpdated.emit();
+	onChangeCountry(name, age){
+		let counObj = {name, age};
+		this.countryUpdated.emit(counObj);
 	}
 }
