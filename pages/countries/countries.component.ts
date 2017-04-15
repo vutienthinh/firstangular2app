@@ -15,4 +15,7 @@ import { CountryComponent } from '../country/country.component';
 
 export class CountriesComponent {
 	_countries: any[] = [{name:'VN',id: '1'},{name:'IN',id: '2'}];
+	handleChangeCountry = () => {
+		alert(11);
+	}
 }

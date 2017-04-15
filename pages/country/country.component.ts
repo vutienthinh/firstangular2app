@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'country-app',
@@ -12,4 +12,10 @@ import { Component, Input } from '@angular/core';
 export class CountryComponent {
 	@Input()
 	curCountry: any = {};
+
+	@Output() countryUpdated = new EventEmitter();
+
+	onChangeCountry(){
+		this.countryUpdated.emit();
+	}
 }
