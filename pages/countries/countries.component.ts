@@ -24,12 +24,15 @@ export class CountriesComponent implements Country {
 	}*/
 	handleChangeCountry(coun: Country): void {
 		console.log(coun);
-		coun.displayMessage('hehe');
+		coun.displayMessage('hehehi');
 		//return coun;
 	}
 		run = {
-			displayMessage:((mes) => {
-				alert(mes)
+			/*displayMessage(mes): void {
+				console.log(mes)
+			}*/
+			displayMessage:(mes => {
+				console.log(mes)
 			})
 		};
 }
