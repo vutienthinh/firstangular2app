@@ -1,4 +1,5 @@
+<h2><ng-content></ng-content></h2>
 <p [innerHtml]="'Name: '+ curCountry.name" (click)="onChangeCountry('Trung', '4')"></p>
 <p>Id: {{curCountry.id}}</p>
-<button (click)="increasement()">Increasement</button>
+<button on-click="increasement()">Increasement</button>
 <p>{{count}}</p>

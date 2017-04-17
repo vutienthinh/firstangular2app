@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CountriesComponent } from '../pages/countries/countries.component';
 
 @Component({
-    selector: 'first-app',
+    selector: 'root-app',
     template: `	<countries-app></countries-app>
     			<h1>{{user?.firstname}} {{user.lastname}}</h1>
     			<h4 textContent="{{user.firstname}}"></h4>
