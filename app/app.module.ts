@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FirstAppComponent } from './app.component';
 import { CountriesComponent } from '../pages/countries/countries.component';
 import { CountryComponent } from '../pages/country/country.component';
+import { ViewChildComponent } from '../pages/viewchild/viewchild.component';
 
 @NgModule({
 	imports: [ BrowserModule ],
-	declarations: [ FirstAppComponent, CountriesComponent, CountryComponent ],
+	declarations: [ FirstAppComponent, CountriesComponent, CountryComponent, ViewChildComponent ],
 	bootstrap: [ FirstAppComponent ]
 })
  

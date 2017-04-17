@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { CountriesComponent } from '../pages/countries/countries.component';
+import { ViewChildComponent } from '../pages/viewchild/viewchild.component';
 
 @Component({
     selector: 'root-app',
-    template: `	<countries-app></countries-app>
+    template: `	<viewchild-app><countries-app></countries-app></viewchild-app> `
+               /* <countries-app></countries-app>
     			<h1>{{user?.firstname}} {{user.lastname}}</h1>
     			<h4 textContent="{{user.firstname}}"></h4>
     			<h4 [textContent]="user.firstname"></h4>
@@ -12,12 +14,12 @@ import { CountriesComponent } from '../pages/countries/countries.component';
     			<h4 [innerHtml]="'FirstName: ' + getInfo().firstname"></h4>
     			<h4 [innerHtml]="'Age: ' + getInfo().age"></h4>
     			<h4 bind-innerHtml="user.firstname"></h4>
-    			<img [src]="user.url">`,
+    			<img [src]="user.url">,*/
     			/*<h4 bind-name="user.firstname"></h4> go wrong bc h4 tag doesn't have name attribute as well as property
     			<h4 [name]="user.firstname"></h4>`
     			<img src={{user.avatar.url}}> go wrong bc browser will try to fetch the image and read "src" ASAP,
     			 the var can come from HTML over time */
-    directives: [CountriesComponent]
+    directives: [CountriesComponent, ViewChildComponent]
 })
 
 export class FirstAppComponent {
