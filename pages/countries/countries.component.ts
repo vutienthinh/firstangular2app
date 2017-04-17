@@ -16,8 +16,10 @@ import { Country } from '../../interface/country.interface';
 
 export class CountriesComponent implements Country {
 	_countries: any[] = [{name:'VN',id: '1'},{name:'IN',id: '2'}];
+
+	countedNumber: number = 0;
 	constructor(){
-		this.handleChangeCountry(this.run);
+		//this.handleChangeCountry(this.run);
 	}
 	/*handleChangeCountry = () => {
 		alert(11);
@@ -35,4 +37,8 @@ export class CountriesComponent implements Country {
 				console.log(mes)
 			})
 		};
+
+	decreasement() : void {
+		this.countedNumber--;
+	}
 }

@@ -1,3 +1,5 @@
 <div class="country-wapper" *ngFor="let count of _countries">
-	<country-app [curCountry]="count" (countryUpdated)="handleChangeCountry($event)"></country-app>
+	<country-app [curCountry]="count" (countryUpdated)="handleChangeCountry($event)" [(count)]="countedNumber"></country-app>
 </div>
+<p [innerHtml]="countedNumber"></p>
+<button (click)="decreasement()">Decreasement</button>
