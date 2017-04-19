@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { CountriesComponent } from '../pages/countries/countries.component';
 import { ViewChildComponent } from '../pages/viewchild/viewchild.component';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
     selector: 'root-app',
-    template: `	<viewchild-app><countries-app></countries-app></viewchild-app> `
+    template: `<router-outlet></router-outlet>`,
+    //template: `	<viewchild-app><countries-app></countries-app></viewchild-app> `
                /* <countries-app></countries-app>
     			<h1>{{user?.firstname}} {{user.lastname}}</h1>
     			<h4 textContent="{{user.firstname}}"></h4>
@@ -19,7 +21,7 @@ import { ViewChildComponent } from '../pages/viewchild/viewchild.component';
     			<h4 [name]="user.firstname"></h4>`
     			<img src={{user.avatar.url}}> go wrong bc browser will try to fetch the image and read "src" ASAP,
     			 the var can come from HTML over time */
-    directives: [CountriesComponent, ViewChildComponent]
+    directives: [CountriesComponent, ViewChildComponent, ROUTER_DIRECTIVES]
 })
 
 export class FirstAppComponent {

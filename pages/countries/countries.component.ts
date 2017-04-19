@@ -15,7 +15,7 @@ import { Country } from '../../interface/country.interface';
 })
 
 export class CountriesComponent implements Country {
-	_countries: any[] = [{name:'VN',id: '1'},{name:'IN',id: '2'}];
+	_countries: any[] = [{name:'VN',id: '1', amount: 10.126},{name:'IN',id: '2', amount: 24.5}];
 
 	countedNumber: number = 0;
 	constructor(){

@@ -2,4 +2,5 @@
 <p [innerHtml]="'Name: '+ curCountry.name" (click)="onChangeCountry('Trung', '4')"></p>
 <p>Id: {{curCountry.id}}</p>
 <button on-click="increasement()">Increasement</button>
-<p>{{count}}</p>
+<p>{{count | percent}}</p>
+<p>{{ curCountry.amount | currency:'USD':true:'6.2-2' }}</p>
