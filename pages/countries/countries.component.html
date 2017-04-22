@@ -1,7 +1,9 @@
 <!-- <div class="country-wapper" *ngFor="let country of _countries"> -->
 <div class="country-wapper">
 	<ng-template ngFor let-i="index" let-country [ngForOf]="_countries">
-		<country-app [curCountry]="country" (countryUpdated)="handleChangeCountry($event)" [(count)]="countedNumber">Country {{i}}</country-app>
+		<!-- do test with 'input' property of directive or component -->
+		<!-- <country-app testInput="haha" transferedText="{{country.name | lowercase}}" [curCountry]="country" (countryUpdated)="handleChangeCountry($event)" [(count)]="countedNumber">Country {{i}}</country-app> -->
+		<country-app testInput="haha" transferedText="{{country.name | lowercase}}" [curCountry]="country" (countryUpdated)="handleChangeCountry($event)" [(count)]="countedNumber">Country {{i}}</country-app>
 	</ng-template>
 </div>
 <p [innerHtml]="countedNumber"></p>

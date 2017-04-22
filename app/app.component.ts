@@ -29,6 +29,12 @@ export class FirstAppComponent {
 	private user: any = {firstname: 'thinh', lastname: 'vu', url: 'https://angular.io/resources/images/logos/standard/logo-nav.png'};
 
     private getInfo() {
+        //union type
+        /*type mixtype = number | string;
+        let mix: mixtype = 2;
+        mix = 'hai';
+        alert(mix);*/
+
     	/*let firstname = 'ha';//this.user.firstname;
     	let lastname = this.user.lastname;*/
     	let { firstname = 'defaultFirstName', lastname = 'defaultLastName', age = '22'} = this.user;
