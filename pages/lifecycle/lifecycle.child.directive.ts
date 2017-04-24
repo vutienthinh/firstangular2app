@@ -13,15 +13,15 @@ export class LifeCycleChildDirective {
 	//@Input() curCountry: any;
 
 	ngOnChanges(changes: SimpleChanges) {
-		console.log(`ngOnChanges Directive ${changes}`);
+		console.log(`ngOnChanges Directive`, changes);
 	}
 
 	ngOnInit() {
 		console.log('ngOnInit Directive');
 	}
 
-	ngOnDetroy() {
-		console.log('ngOnDetroy Directive');
+	ngOnDestroy() {
+		console.log('ngOnDestroy Directive');
 	}
 
 	ngDoCheck() {

@@ -1,4 +1,5 @@
 import { Component, Input} from '@angular/core';
+import { ActivatedRoute  } from '@angular/router';
 import { CountryComponent } from '../country/country.component';
 import { Country } from '../../interface/country.interface';
 
@@ -15,10 +16,13 @@ import { Country } from '../../interface/country.interface';
 })
 
 export class CountriesComponent implements Country {
-	_countries: any[] = [{name:'VN',id: '1', amount: 10.126},{name:'IN',id: '2', amount: 24.5}];
+	id: number;
+	private sub: any;
 
+	_countries: any[] = [{name:'VN',id: '1', amount: 10.126},{name:'IN',id: '2', amount: 24.5}];
 	countedNumber: number = 0;
-	constructor(){
+
+	constructor(private route: ActivatedRoute){
 		//this.handleChangeCountry(this.run);
 	}
 	/*handleChangeCountry = () => {
@@ -40,5 +44,16 @@ export class CountriesComponent implements Country {
 
 	decreasement() : void {
 		this.countedNumber--;
+	}
+
+	ngOnInit() {
+		this.sub = this.route.params.subscribe(params => {
+			this.id = +params['id'];
+		});
+		console.log(`ngOnInit ${this['id']}`);
+	}
+
+	ngOnDestroy() {
+		this.sub.unsubscribe();
 	}
 }

@@ -1,4 +1,5 @@
 <h2><ng-content></ng-content></h2>
-<!-- <lifecycle-child-app [curCountry]="_countries[0]"></lifecycle-child-app> -->
-<div lifecycleChild [curCountry]="_countries[0]"></div>
+<button>Back</button>
+<lifecycle-child-app [curCountry]="_countries[0]" [count]="count"></lifecycle-child-app>
+<div lifecycleChild [curCountry]="_countries[0]" ></div>
 <button (click)="doUpdateCountry()">Update Country</button>

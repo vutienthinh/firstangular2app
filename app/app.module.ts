@@ -13,9 +13,10 @@ import { EncapsulationNoneComponent } from '../pages/encapsulation/encapsulation
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
-  { path: '', component: ViewChildComponent },
-  { path: 'countries',      component: CountriesComponent },
-  { path: 'lifecycle',      component: LifeCycleComponent },
+  { path: '', redirectTo: 'viewchild', pathMatch: 'full' },
+  { path: 'viewchild', component: ViewChildComponent },
+  { path: 'countries/:id', component: CountriesComponent },
+  { path: 'lifecycle/:id', component: LifeCycleComponent },
   /*{
     path: 'heroes',
     component: HeroListComponent,

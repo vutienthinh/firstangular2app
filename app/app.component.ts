@@ -5,7 +5,12 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
     selector: 'root-app',
-    template: `<router-outlet></router-outlet>`,
+    template: `<nav>
+                    <a routerLink="/" routerLinkActive="active">Home</a>
+                    <a routerLink="/countries/1" routerLinkActive="active">Countries</a>
+                    <a routerLink="/lifecycle/2" routerLinkActive="active">Lifecycle</a>
+                </nav>
+                <router-outlet></router-outlet>`,
     //template: `	<viewchild-app><countries-app></countries-app></viewchild-app> `
                /* <countries-app></countries-app>
     			<h1>{{user?.firstname}} {{user.lastname}}</h1>

@@ -9,6 +9,7 @@ import { Component, Input, SimpleChanges } from '@angular/core';
 
 export class LifeCycleChildComponent {
 	@Input() curCountry: any;
+	@Input() count: number;
 
 	ngOnChanges(changes: SimpleChanges) {
 		console.log('ngOnChanges', changes);
@@ -18,8 +19,8 @@ export class LifeCycleChildComponent {
 		console.log('ngOnInit');
 	}
 
-	ngOnDetroy() {
-		console.log('ngOnDetroy');
+	ngOnDestroy() {
+		console.log('ngOnDestroy');
 	}
 
 	ngDoCheck() {
