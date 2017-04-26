@@ -9,6 +9,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
                     <a routerLink="/" routerLinkActive="active">Home</a>
                     <a routerLink="/countries/1" routerLinkActive="active">Countries</a>
                     <a routerLink="/lifecycle/2" routerLinkActive="active">Lifecycle</a>
+                    <a routerLink="/observable" routerLinkActive="active">Observable</a>
                 </nav>
                 <router-outlet></router-outlet>`,
     //template: `	<viewchild-app><countries-app></countries-app></viewchild-app> `

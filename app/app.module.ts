@@ -10,6 +10,7 @@ import { LifeCycleChildDirective } from '../pages/lifecycle/lifecycle.child.dire
 import { EncapsulationEmulatedComponent } from '../pages/encapsulation/encapsulation.emulated.component';
 import { EncapsulationNativeComponent } from '../pages/encapsulation/encapsulation.native.component';
 import { EncapsulationNoneComponent } from '../pages/encapsulation/encapsulation.none.component';
+import { ObservableComponent } from '../pages/observable/observable.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'viewchild', component: ViewChildComponent },
   { path: 'countries/:id', component: CountriesComponent },
   { path: 'lifecycle/:id', component: LifeCycleComponent },
+  { path: 'observable', component: ObservableComponent },
   /*{
     path: 'heroes',
     component: HeroListComponent,
@@ -31,7 +33,7 @@ const appRoutes: Routes = [
 
 @NgModule({
 	imports: [ BrowserModule, RouterModule.forRoot(appRoutes) ],
-	declarations: [ FirstAppComponent, CountriesComponent, CountryComponent, LifeCycleComponent, LifeCycleChildComponent, ViewChildComponent, EncapsulationEmulatedComponent, EncapsulationNativeComponent, EncapsulationNoneComponent, LifeCycleChildDirective ],
+	declarations: [ FirstAppComponent, CountriesComponent, CountryComponent, LifeCycleComponent, LifeCycleChildComponent, ViewChildComponent, EncapsulationEmulatedComponent, EncapsulationNativeComponent, EncapsulationNoneComponent, LifeCycleChildDirective, ObservableComponent ],
 	bootstrap: [ FirstAppComponent ]
 })
  
