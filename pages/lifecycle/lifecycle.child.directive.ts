@@ -1,4 +1,4 @@
-import { Directive, Input, SimpleChanges } from '@angular/core';
+import { Directive, Input, SimpleChanges, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
 	selector: '[lifecycleChild]',
@@ -11,6 +11,25 @@ import { Directive, Input, SimpleChanges } from '@angular/core';
 
 export class LifeCycleChildDirective {
 	//@Input() curCountry: any;
+	private hostElm: any = {};
+	constructor(private elementRef: ElementRef) {
+		console.log(this.elementRef.nativeElement);
+		this.hostElm = this.elementRef.nativeElement;
+		this.hostElm.style.backgroundColor = 'green';
+		this.hostElm.style.textTransform = 'capitalize';
+		let parent = this.hostElm.parentElement;
+		let clonedElm = this.hostElm.cloneNode(true);
+		clonedElm.innerHTML = 'This is clone directive';
+		parent.appendChild(clonedElm);
+	}
+
+	@HostListener('mouseenter') handleMouseEnter() {
+		this.hostElm.style.backgroundColor = 'red';
+	}
+
+	@HostListener('mouseleave') handleMouseLeave() {
+		this.hostElm.style.backgroundColor = 'green';
+	}
 
 	ngOnChanges(changes: SimpleChanges) {
 		console.log(`ngOnChanges Directive`, changes);
