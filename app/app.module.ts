@@ -11,7 +11,9 @@ import { EncapsulationEmulatedComponent } from '../pages/encapsulation/encapsula
 import { EncapsulationNativeComponent } from '../pages/encapsulation/encapsulation.native.component';
 import { EncapsulationNoneComponent } from '../pages/encapsulation/encapsulation.none.component';
 import { ObservableComponent } from '../pages/observable/observable.component';
+import { FormAppComponent } from '../pages/form/form.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'viewchild', pathMatch: 'full' },
@@ -19,6 +21,7 @@ const appRoutes: Routes = [
   { path: 'countries/:id', component: CountriesComponent },
   { path: 'lifecycle/:id', component: LifeCycleComponent },
   { path: 'observable', component: ObservableComponent },
+  { path: 'form', component: FormAppComponent },
   /*{
     path: 'heroes',
     component: HeroListComponent,
@@ -32,8 +35,8 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-	imports: [ BrowserModule, RouterModule.forRoot(appRoutes) ],
-	declarations: [ FirstAppComponent, CountriesComponent, CountryComponent, LifeCycleComponent, LifeCycleChildComponent, ViewChildComponent, EncapsulationEmulatedComponent, EncapsulationNativeComponent, EncapsulationNoneComponent, LifeCycleChildDirective, ObservableComponent ],
+	imports: [ BrowserModule, RouterModule.forRoot(appRoutes), FormsModule, ReactiveFormsModule],
+	declarations: [ FirstAppComponent, CountriesComponent, CountryComponent, LifeCycleComponent, LifeCycleChildComponent, ViewChildComponent, EncapsulationEmulatedComponent, EncapsulationNativeComponent, EncapsulationNoneComponent, LifeCycleChildDirective, ObservableComponent, FormAppComponent ],
 	bootstrap: [ FirstAppComponent ]
 })
  

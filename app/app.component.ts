@@ -10,6 +10,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
                     <a routerLink="/countries/1" routerLinkActive="active">Countries</a>
                     <a routerLink="/lifecycle/2" routerLinkActive="active">Lifecycle</a>
                     <a routerLink="/observable" routerLinkActive="active">Observable</a>
+                    <a routerLink="/form" routerLinkActive="active">Form</a>
                 </nav>
                 <router-outlet></router-outlet>`,
     //template: `	<viewchild-app><countries-app></countries-app></viewchild-app> `

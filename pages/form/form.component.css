@@ -1,0 +1,19 @@
+.head-title {
+	color: red;
+	text-transform: uppercase;
+}
+
+.cls-1 {
+	opacity: 0;
+	animation: 3s 1s ease fadeIn;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+	100% {
+		opacity: 1;
+	}
+	0% {
+		opacity: 0;
+	}
+}
