@@ -1,8 +1,8 @@
+$head-title-color: green;
 .head-title {
-	color: red;
+	color: $head-title-color;
 	text-transform: uppercase;
 }
-
 .cls-1 {
 	opacity: 0;
 	animation: 3s 1s ease fadeIn;

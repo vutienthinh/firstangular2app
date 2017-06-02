@@ -9,7 +9,7 @@ import { EncapsulationNoneComponent } from '../encapsulation/encapsulation.none.
 	selector: 'viewchild-app',
 	moduleId: module.id,
 	templateUrl: 'viewchild.component.html',
-	styleUrls: ['viewchild.component.css'],
+	styleUrls: ['viewchild.component.scss'],
 	directives: [CountryComponent, CountriesComponent, EncapsulationEmulatedComponent, EncapsulationNativeComponent, EncapsulationNoneComponent]
 })
 
@@ -18,6 +18,20 @@ export class ViewChildComponent {
 	@ViewChild(CountryComponent) childViewElm: CountryComponent;
 	@ContentChild(CountriesComponent) childContentElm: CountriesComponent;
 	//@ViewChildren(CountryComponent) childrenComponent: QueryList<CountryComponent>;
+	constructor() {
+		// enum ShapeType {
+	 //    Rectangle,
+	 //    Circle,
+	 //    Line,
+	 //    Freehand   
+		// }
+		// console.log(ShapeType);
+		/*enum Color {Red, Green, Blue};
+		let c: Color = Color.Green;
+
+		console.log(c);
+		console.log(Color[2]);*/
+	}
 
 	doIncrease = (() => {
 		this.childViewElm.increasement();

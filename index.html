@@ -8,59 +8,6 @@
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>
     <script>
-    System.config({
-        // we want to import modules without writing .js at the end
-        defaultExtension: 'js',
-        // the app will need the following dependencies
-        map: {
-            '@angular': 'node_modules/@angular',
-            'rxjs': 'node_modules/rxjs'
-        },
-       /* meta: {
-            '*.scss': { 'loader': 'sass' },
-            '*.sass': { 'loader': 'sass' }
-        },*/
-        // angular needs a bit of configuration to point to the main files
-        packages: {
-        	app: {
-	            main: 'bootstrap.js',
-	            defaultExtension: 'js'
-	        },
-            pages: {
-                defaultExtension: 'js'
-            },
-            interface: {
-                defaultExtension: 'js'
-            },
-            '@angular/core': {
-                main: 'bundles/core.umd.js',
-                defaultExtension: 'js'
-            },
-            '@angular/compiler': {
-                main: 'bundles/compiler.umd.js',
-                defaultExtension: 'js'
-            },
-            '@angular/common': {
-                main: 'bundles/common.umd.js',
-                defaultExtension: 'js'
-            },
-            '@angular/platform-browser': {
-                main: 'bundles/platform-browser.umd.js'
-            },
-            '@angular/platform-browser-dynamic': {
-                main: 'bundles/platform-browser-dynamic.umd.js'
-            },
-            '@angular/router': {
-                main: 'bundles/router.umd.js'
-            },
-            '@angular/forms': {
-                main: 'bundles/forms.umd.js'
-            },
-            'rxjs': {
-		        defaultExtension: 'js'
-		    },
-        }
-    });
     // and to finish, let's boot the app!
     System.import('bootstrap.js').catch(function(err){ console.error(err); });
     /*System.import('style.scss').catch(function(err){ console.error(err); });*/
