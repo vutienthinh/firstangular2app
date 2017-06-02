@@ -5,6 +5,8 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.js"></script>
+    <!-- <script src="jspm_packages/system.js"></script> -->
+    <!-- <script src="config.js"></script> -->
     <script>
     System.config({
         // we want to import modules without writing .js at the end
@@ -14,6 +16,10 @@
             '@angular': 'node_modules/@angular',
             'rxjs': 'node_modules/rxjs'
         },
+       /* meta: {
+            '*.scss': { 'loader': 'sass' },
+            '*.sass': { 'loader': 'sass' }
+        },*/
         // angular needs a bit of configuration to point to the main files
         packages: {
         	app: {
@@ -56,8 +62,8 @@
         }
     });
     // and to finish, let's boot the app!
-    System.import('bootstrap.js').catch(function(err){ console.error(err); })
-    ;
+    System.import('bootstrap.js').catch(function(err){ console.error(err); });
+    /*System.import('style.scss').catch(function(err){ console.error(err); });*/
     </script>
 </head>
 
